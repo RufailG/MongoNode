@@ -1,0 +1,12 @@
+<button class="btn btn-primary" (click)="load10Movies()">Carica 10 film</button>
+
+<div class="card-columns">
+<div *ngFor="let movie of results" class="card">
+  <div *ngIf="photoURL(movie.poster) != false"><img class="card-img-top" [src]="photoURL(movie.poster)"></div>
+  <div *ngIf="photoURL(movie.poster) == false"><div class="alert alert-primary" role="alert">This is a primary alert—check it out!</div></div>
+  <div class="card-body text-centre">
+    <h1 class="card-title">{{movie.title}}</h1>
+    <p class="card-text">{{movie.fullplot}}</p>
+  </div>
+</div>
+</div>
